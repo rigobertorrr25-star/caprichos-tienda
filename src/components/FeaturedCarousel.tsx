@@ -89,7 +89,7 @@ export default function FeaturedCarousel({ products }: FeaturedCarouselProps) {
     if (!el || !appeared) return;
 
     const active = document.activeElement;
-    if (active === document.body) el.focus();
+    if (active === document.body) el.focus({ preventScroll: true });
   }, [appeared]);
 
   if (products.length === 0) return null;
