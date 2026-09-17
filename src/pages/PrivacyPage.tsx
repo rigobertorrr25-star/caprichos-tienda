@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 
 const PrivacyPage = () => {
@@ -44,7 +45,7 @@ const PrivacyPage = () => {
               <p>
                 Usamos cookies básicas en nuestro sitio web para recordar tus preferencias y mejorar tu
                 experiencia de navegación. Puedes gestionar las cookies desde nuestra{' '}
-                <a href="/cookies" className="underline hover:text-foreground">política de cookies</a>.
+                <Link to="/cookies" className="underline hover:text-foreground">política de cookies</Link>.
               </p>
             </section>
 

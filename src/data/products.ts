@@ -1,3 +1,5 @@
+import { withBase } from '@/lib/assets';
+
 export type Category =
   | 'Vestidos'
   | 'Bodys'
@@ -32,7 +34,7 @@ export const CATEGORIES: Category[] = [
 // Categories mentioned in the brand story that don't have stock/photos yet.
 export const COMING_SOON_CATEGORIES = ['Bolsos', 'Calzado', 'Ropa de playa'];
 
-export const PRODUCTS: Product[] = [
+const RAW_PRODUCTS: Product[] = [
   {
     id: 'vestido-rojo-pasion',
     slug: 'vestido-rojo-pasion',
@@ -279,6 +281,11 @@ export const PRODUCTS: Product[] = [
     description: 'Set deportivo de top y short a conjunto. Cómodo, fresco y perfecto para tu día a día activo.',
   },
 ];
+
+export const PRODUCTS: Product[] = RAW_PRODUCTS.map((p) => ({
+  ...p,
+  images: p.images.map(withBase),
+}));
 
 export function getProductBySlug(slug: string): Product | undefined {
   return PRODUCTS.find((p) => p.slug === slug);

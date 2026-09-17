@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import Layout from '@/components/Layout';
 import { PRODUCTS } from '@/data/products';
+import { withBase } from '@/lib/assets';
 
 const essence = ['Exclusividad', 'Feminidad', 'El placer de darse un gusto', 'Confianza', 'Felicidad', 'Moda y tendencias'];
 
@@ -24,7 +25,7 @@ export default function AboutPage() {
 
           <div className="flex items-center page-padding py-16 md:py-0">
             <div className="max-w-md">
-              <img src="/brand/logo.jpg" alt="Caprichos" className="h-20 w-20 rounded-full object-cover mb-6" />
+              <img src={withBase('/brand/logo.jpg')} alt="Caprichos" className="h-20 w-20 rounded-full object-cover mb-6" />
               <h1 className="font-display text-2xl mb-6">Nosotros</h1>
 
               <div className="space-y-6 text-sm text-muted-foreground leading-relaxed">

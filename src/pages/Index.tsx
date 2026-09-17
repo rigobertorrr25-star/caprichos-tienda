@@ -5,6 +5,7 @@ import Layout from '@/components/Layout';
 import FeaturedCarousel from '@/components/FeaturedCarousel';
 import { CATEGORIES, PRODUCTS, getProductsByCategory } from '@/data/products';
 import { greetingWhatsAppUrl } from '@/lib/whatsapp';
+import { withBase } from '@/lib/assets';
 
 const featured = CATEGORIES.map((category) => getProductsByCategory(category)[0]).filter(Boolean);
 
@@ -29,7 +30,7 @@ export default function Index() {
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-primary/10" />
 
         <div className="relative z-10 flex h-full flex-col items-center justify-end pb-16 text-center page-padding">
-          <img src="/brand/logo.jpg" alt="Caprichos" className="mb-4 h-24 w-24 rounded-full object-cover shadow-lg md:h-28 md:w-28" />
+          <img src={withBase('/brand/logo.jpg')} alt="Caprichos" className="mb-4 h-24 w-24 rounded-full object-cover shadow-lg md:h-28 md:w-28" />
           <h1 className="font-display text-3xl text-foreground md:text-4xl">El lujo de ser tú.</h1>
           <p className="mt-2 text-sm text-muted-foreground md:text-base">
             Moda femenina en tendencia desde Cartagena
