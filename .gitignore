@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# lista de trabajo de Claude en tareas largas
+PENDIENTES.md
